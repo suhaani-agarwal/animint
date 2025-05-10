@@ -3,7 +3,7 @@ data(WorldBank)
 WorldBank$region <- sub(" (all income levels)", "", WorldBank$region, fixed=TRUE)
 wb.paper <- animint(
   title = "World Bank data viz for Animint paper",
-  source = "https://github.com/suhaani-agarwal/animint",
+  source = "https://github.com/suhaani-agarwal/animint/blob/master/inst/examples/WorldBank-paper.R",
   ts = ggplot() +
     make_tallrect(WorldBank, "year") +
     guides(color = "none") +
