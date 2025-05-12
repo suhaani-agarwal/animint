@@ -17,7 +17,7 @@ wb.paper <- animint(
     ),
   scatter = ggplot() +
     geom_point(
-      aes(fertility.rate, life.expectancy, colour = region, size = population),
+      aes(fertility.rate, life.expectancy, colour = region, size = population, key = country),
       data = WorldBank,
       tooltip = paste(WorldBank$country, "population", WorldBank$population),
       key = "country",
