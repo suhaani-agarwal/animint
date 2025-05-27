@@ -112,6 +112,7 @@ mmir.BIC <-
     source = "https://github.com/suhaani-agarwal/animint/blob/master/inst/examples/intreg_BIC.R",
     segments=ggplot()+
        theme_bw()+
+       theme_animint(width=500)+
        ggtitle("Select profile and number of segments")+
        tallrects+
        scale_x_continuous("segments", breaks=c(1, 5, 10, 20),
@@ -157,12 +158,11 @@ mmir.BIC <-
        geom_text(aes(base/1e6, logratio,
                      label=sprintf("%d segment%s", segments,
                        ifelse(segments==1, "", "s"))
-                     ),showSelected=c("signal", "segments"),
+                     ),showSelected=c("signal", "segments"), size = 15,
                  data=seg.names, color=signal.colors[["estimate"]]),
         
 
        first=list(signal="4.2", segments=4),
-       duration=list(signal=2000, segments=2000),
        time=list(variable="segments", ms=3000),
        selector.types=list(signal="single", segments="single")
 )
