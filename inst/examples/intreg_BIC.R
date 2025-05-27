@@ -119,6 +119,7 @@ mmir.BIC <-
                           limits=c(-2, 21))+
        xlab("")+
        facet_grid(variable ~ ., scales="free_y")+
+       theme(panel.margin=grid::unit(1.5, "lines"))+
        geom_line(aes(segments, error,
                      group=signal
                      ),clickSelects="signal",
@@ -130,7 +131,6 @@ mmir.BIC <-
                      ),clickSelects="signal",
                  data=data.frame(penalized, variable="penalized error (BIC)"),
                  alpha=0.6, size=8),
-
        signal=ggplot()+
        theme_bw()+
        theme_animint(width=800)+       
@@ -160,8 +160,6 @@ mmir.BIC <-
                        ifelse(segments==1, "", "s"))
                      ),showSelected=c("signal", "segments"), size = 15,
                  data=seg.names, color=signal.colors[["estimate"]]),
-        
-
        first=list(signal="4.2", segments=4),
        time=list(variable="segments", ms=3000),
        selector.types=list(signal="single", segments="single")
